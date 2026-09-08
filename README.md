@@ -8,7 +8,7 @@ downloaded.
 
 ## Status
 
-- [ ] Pre-registration filed on OSF — DOI: _pending_
+- [ ] Pre-registration filed on OSF — DOI: 10.17605/OSF.IO/GY6FU
 - [ ] Data frozen (`python3 -m src.data.freeze`)
 - [ ] Experiment 0: correlation between entropy variants and realized volatility
 - [ ] Incremental-information test
