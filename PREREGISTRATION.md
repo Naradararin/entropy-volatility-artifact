@@ -206,5 +206,5 @@ rather than criticising individual authors.
 ## 9. Amendments
 
 | Date | Change | Reason |
-|---|---|---|
+| 2026-09-08 | Discovered that fixed bin edges (±1%,±2%) are calibrated to SPX-scale volatility, not crypto-scale. 79% of BTC windows and 93% of ETH windows exceed the outer edge, saturating H near ceiling. This explains low/negative ρ for BTC/ETH — a within-sample saturation effect, not evidence against H≈g(σ). SPX (3.6% saturated) shows ρ=0.96, consistent with P1. Reframing: P1/P6/P7 are henceforth interpreted per-asset with saturation fraction reported alongside ρ, not pooled or treated as a single pass/fail. This was not anticipated at freeze time; the synthetic-null test in §5.2 must now be run per-asset using EACH asset's own σ path, not a single shared null. | Bin-scale mismatch discovered during Experiment 0 pillar A, before any bin edges were changed. |
 | | | |
