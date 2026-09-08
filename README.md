@@ -14,6 +14,7 @@ downloaded.
 - [ ] Incremental-information test
 - [ ] Estimator-bias panel
 - [ ] Propagation audit
+- [ ] [GitHub repo — https://github.com/Naradararin/entropy-volatility-artifact]
 
 ## Setup
 
