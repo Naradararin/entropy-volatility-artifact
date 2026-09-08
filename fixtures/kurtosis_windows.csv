@@ -1,0 +1,4 @@
+window_id,description,returns,expected_kurtosis
+K1,10/10 symmetric two-point at +-0.01: excess kurtosis of any equal-probability two-point distribution is exactly -2,"-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,-0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01",-2.0
+K2,19 zeros + 1 at 0.01: mean=1/20; m2=19/400; m4=6517/160000; kurtosis=m4/m2^2-3=6517/361-3=286/19,"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.01",15.052631578947368
+K3,10/10 asymmetric two-point at -0.03/+0.005 (unequal spacing; still 50/50): kurtosis is location/scale invariant so still exactly -2,"-0.03,-0.03,-0.03,-0.03,-0.03,-0.03,-0.03,-0.03,-0.03,-0.03,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005",-2.0
