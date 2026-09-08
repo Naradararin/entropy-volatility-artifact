@@ -1,9 +1,9 @@
 # Pre-Registration: Fixed-Bin Shannon Entropy as a Re-Encoding of Realized Volatility
 
 **Status:** FROZEN — committed before any data was downloaded
-**Author:** [name]
-**Date frozen:** [YYYY-MM-DD]
-**Commit hash at freeze:** [filled by git]
+**Author:** [Thitiphoom Pannarin]
+**Date frozen:** [2026-09-08]
+**Commit hash at freeze:** [2f83265a5f1450e9b7151c3e3f48799c1f490747]
 
 > This document is written *before* data acquisition and analysis. Any change after
 > the freeze date must be recorded in the Amendments section at the bottom, with a
@@ -44,8 +44,8 @@ All four are required. Any subset invites the reviewer response "this is well kn
 |---|---|
 | Assets | BTC-USD, ETH-USD, plus one equity index (S&P 500) as a non-crypto anchor |
 | Frequency | Daily close |
-| Period | [START] to [END] — fixed before download, never extended to improve results |
-| Source | [source + exact endpoint] |
+| Period | [2017-01-01] to [2025-12-31] — fixed before download, never extended to improve results |
+| Source | [yfinance (Yahoo Finance), unofficial API, Thitiphoom Pannarin, 2026-09-08] |
 | Storage | Parquet, SHA256 recorded in `data/manifest.json` |
 | Timezone | UTC, close-to-close |
 
@@ -88,16 +88,16 @@ calibration record; it is worthless if written afterwards.
 
 | # | Prediction | My forecast | Claude's forecast |
 |---|---|---|---|
-| P1 | Spearman ρ(H_fixed, σ) on BTC daily ≥ 0.80 | ___% | 80% |
-| P2 | R² of H_fixed on a monotone spline of σ ≥ 0.85 | ___% | 70% |
-| P3 | Spearman ρ(H_permutation, σ) ≤ 0.30 | ___% | 75% |
-| P4 | ρ(H_quantile, σ) materially lower than ρ(H_fixed, σ) | ___% | 85% |
-| P5 | Incremental R² of H_fixed for next-20d σ, controlling for current σ, < 0.01 | ___% | 60% |
-| P6 | Occupied-bin count K correlates with σ at ρ ≥ 0.7 | ___% | 80% |
-| P7 | The above hold on the equity index as well as on crypto | ___% | 65% |
-| P8 | Residual variance of H around the monotone fit on REAL data is within 25% of the same quantity on the synthetic null | ___% | 55% |
-| P9 | ≥ 25% of windows have H pinned at the floor (0) or the ceiling (log₂5) | ___% | 60% |
-| P10 | Excess residual over the null, if any, concentrates in the top kurtosis quartile | ___% | 65% |
+| P1 | Spearman ρ(H_fixed, σ) on BTC daily ≥ 0.80 | 90% | 80% |
+| P2 | R² of H_fixed on a monotone spline of σ ≥ 0.85 | 60% | 70% |
+| P3 | Spearman ρ(H_permutation, σ) ≤ 0.30 | 60% | 75% |
+| P4 | ρ(H_quantile, σ) materially lower than ρ(H_fixed, σ) | 70% | 85% |
+| P5 | Incremental R² of H_fixed for next-20d σ, controlling for current σ, < 0.01 | 40% | 60% |
+| P6 | Occupied-bin count K correlates with σ at ρ ≥ 0.7 | 50% | 80% |
+| P7 | The above hold on the equity index as well as on crypto | 50% | 65% |
+| P8 | Residual variance of H around the monotone fit on REAL data is within 25% of the same quantity on the synthetic null | 50% | 55% |
+| P9 | ≥ 25% of windows have H pinned at the floor (0) or the ceiling (log₂5) | 50% | 60% |
+| P10 | Excess residual over the null, if any, concentrates in the top kurtosis quartile | 50% | 65% |
 
 Scoring: after results are in, record actual outcomes and compute a Brier score.
 Log it in `calibration_log.json`. Repeat this table for every future experiment.
