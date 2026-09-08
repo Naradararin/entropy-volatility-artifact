@@ -1,0 +1,36 @@
+{
+  "source": "yfinance (Yahoo Finance), unofficial API",
+  "requested_start": "2017-01-01",
+  "requested_end": "2025-12-31",
+  "frozen_at_utc": "2026-09-08T10:44:17+00:00",
+  "files": [
+    {
+      "name": "BTC",
+      "ticker": "BTC-USD",
+      "file": "data\\raw\\BTC.parquet",
+      "rows": 3286,
+      "first_date": "2017-01-01",
+      "last_date": "2025-12-30",
+      "sha256": "d6c0159b3e3d21cebfe2e2ea8ed08d629e123820ed171da32bd9a7305b19f773"
+    },
+    {
+      "name": "ETH",
+      "ticker": "ETH-USD",
+      "file": "data\\raw\\ETH.parquet",
+      "rows": 2974,
+      "first_date": "2017-11-09",
+      "last_date": "2025-12-30",
+      "sha256": "4ce38470f524d3a58ce7f07c44d0570164c9cbf9ec04e2a2df1517b052eeea80"
+    },
+    {
+      "name": "SPX",
+      "ticker": "^GSPC",
+      "file": "data\\raw\\SPX.parquet",
+      "rows": 2261,
+      "first_date": "2017-01-03",
+      "last_date": "2025-12-30",
+      "sha256": "8be886229f5b8a5a99e54b14cb422b7dff98dbf69468541fd78fa4f842f48712"
+    }
+  ],
+  "note": "Frozen snapshot. Downstream code must read these files only. Row counts differ across assets by design: crypto trades every day, the equity index does not."
+}
